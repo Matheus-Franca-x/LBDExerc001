@@ -36,17 +36,17 @@ public class AlunoController
 		
 		Aluno a1 = new Aluno();
 		a1.setRa(1);
-		a1.setNome("ads");
+		a1.setNome("Gabriel Eron");
 		a1.setIdade(6);
 		
 		Aluno a2 = new Aluno();
 		a2.setRa(2);
-		a2.setNome("psicologia");
+		a2.setNome("Karlos Victor");
 		a2.setIdade(3);
 		
 		Aluno a3 = new Aluno();
 		a3.setRa(3);
-		a3.setNome("matematica");
+		a3.setNome("Rodrigo");
 		a3.setIdade(4);
 		
 		alunos.add(a1);

@@ -37,18 +37,18 @@ public class CursoController
 		
 		Curso c1 = new Curso();
 		c1.setCodigo(1);
-		c1.setNome("ads");
-		c1.setArea("tecnologia");
+		c1.setNome("Ads");
+		c1.setArea("Tecnologia");
 		
 		Curso c2 = new Curso();
 		c2.setCodigo(2);
-		c2.setNome("psicologia");
-		c2.setArea("humanas");
+		c2.setNome("Psicologia");
+		c2.setArea("Humanas");
 		
 		Curso c3 = new Curso();
 		c3.setCodigo(3);
-		c3.setNome("matematica");
-		c3.setArea("exatas");
+		c3.setNome("Calculo");
+		c3.setArea("Exatas");
 		
 		cursos.add(c1);
 		cursos.add(c2);

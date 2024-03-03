@@ -36,18 +36,18 @@ public class ProfessorController
 		
 		Professor p1 = new Professor();
 		p1.setRegistro(1);
-		p1.setNome("ads");
-		p1.setTitulacao("teste");
+		p1.setNome("João Silva");
+		p1.setTitulacao("Doutorado");
 		
 		Professor p2 = new Professor();
 		p2.setRegistro(2);
-		p2.setNome("psicologia");
-		p2.setTitulacao("teste");
+		p2.setNome("Maria Santos");
+		p2.setTitulacao("Mestrado");
 		
 		Professor p3 = new Professor();
 		p3.setRegistro(3);
-		p3.setNome("matematica");
-		p3.setTitulacao("teste");
+		p3.setNome("Pedro Oliveira");
+		p3.setTitulacao("Especialização");
 		
 		professores.add(p1);
 		professores.add(p2);

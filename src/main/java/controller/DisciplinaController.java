@@ -36,17 +36,17 @@ public class DisciplinaController
 		
 		Disciplina d1 = new Disciplina();
 		d1.setCodigo(1);
-		d1.setNome("ads");
+		d1.setNome("Matemática");
 		d1.setCargaHoraria(6);
 		
 		Disciplina d2 = new Disciplina();
 		d2.setCodigo(2);
-		d2.setNome("psicologia");
+		d2.setNome("História");
 		d2.setCargaHoraria(3);
 		
 		Disciplina d3 = new Disciplina();
 		d3.setCodigo(3);
-		d3.setNome("matematica");
+		d3.setNome("Física");
 		d3.setCargaHoraria(4);
 		
 		disciplinas.add(d1);
