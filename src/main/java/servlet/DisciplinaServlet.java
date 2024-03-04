@@ -50,7 +50,8 @@ public class DisciplinaServlet extends HttpServlet
 		String cmd = request.getParameter("botao");
 		String codigo = request.getParameter("codigoDisciplina");
 		String nome = request.getParameter("nomeDisciplina");
-		String cargaHoraria = request.getParameter("areaDisciplina");
+		String cargaHoraria = request.getParameter("cargaHorariaDisciplina");
+		List<Disciplina> disciplinas = new ArrayList<>();
 		
 		//saida
 		String saida = "";
@@ -61,9 +62,16 @@ public class DisciplinaServlet extends HttpServlet
 		if(!cmd.contains("Cadastrar") || !cmd.contains("Alterar"))
 		{
 			d.setNome(nome);
-			d.setCargaHoraria(Integer.parseInt(cargaHoraria));
+			if(!cargaHoraria.strip().equals(""))
+			{
+				d.setCargaHoraria(Integer.parseInt(cargaHoraria));
+			}
+			else {
+				d.setCargaHoraria(0);
+			}
 		}
 		try {
+			disciplinas = dControl.listarDisciplinas();
 			if(cmd.contains("Cadastrar"))
 			{
 				dControl.cadastrarDisciplina(d);
@@ -93,6 +101,7 @@ public class DisciplinaServlet extends HttpServlet
 			request.setAttribute("saida", saida);
 			request.setAttribute("erro", erro);
 			request.setAttribute("disciplina", d);
+			request.setAttribute("disciplinas", disciplinas);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("disciplina.jsp");
 			rd.forward(request, response);

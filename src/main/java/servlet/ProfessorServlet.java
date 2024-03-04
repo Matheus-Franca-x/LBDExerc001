@@ -51,6 +51,7 @@ public class ProfessorServlet extends HttpServlet
 		String registro = request.getParameter("registroProfessor");
 		String nome = request.getParameter("nomeProfessor");
 		String titulacao = request.getParameter("titulacaoProfessor");
+		List<Professor> professores = new ArrayList<>();
 		
 		//saida
 		String saida = "";
@@ -64,6 +65,7 @@ public class ProfessorServlet extends HttpServlet
 			p.setTitulacao(titulacao);
 		}
 		try {
+			professores = pControl.listarProfessors();
 			if(cmd.contains("Cadastrar"))
 			{
 				pControl.cadastrarProfessor(p);
@@ -93,6 +95,7 @@ public class ProfessorServlet extends HttpServlet
 			request.setAttribute("saida", saida);
 			request.setAttribute("erro", erro);
 			request.setAttribute("professor", p);
+			request.setAttribute("professores", professores);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("professor.jsp");
 			rd.forward(request, response);

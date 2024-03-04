@@ -46,18 +46,18 @@
 			</div>
 		</nav>
 		<main class="rounded-4 border border-primary form-container m-auto mb-3">
-			<form action="disciplina" method="post">
+			<form action="professor" method="post">
 				<div class="form-floating d-flex mb-3">
-					<input type="number" class="form-control input-height" id="floatingInput" placeholder="Codigo" step="1" name="registroProfessor" value='<c:out value="${disciplina.registro}"></c:out>'>
+					<input type="number" class="form-control input-height" id="floatingInput" placeholder="Codigo" step="1" name="registroProfessor" value='<c:out value="${professor.registro}"></c:out>'>
 					<label for="floatingInput" class="font-text">Registro</label>
 					<button class="btn btn-outline-secondary" name="botao" value="Buscar">Buscar</button>
 				</div>
 				<div class="form-floating mb-3">
-					<input type="text" class="form-control input-height" id="floatingInput" placeholder="Nome"name="nomeProfessor" value='<c:out value="${disciplina.nome}"></c:out>'>
+					<input type="text" class="form-control input-height" id="floatingInput" placeholder="Nome"name="nomeProfessor" value='<c:out value="${professor.nome}"></c:out>'>
 					<label for="floatingInput" class="font-text">Nome</label>
 				</div>
 				<div class="form-floating mb-3 input-height">
-					<input type="number" class="form-control input-height" id="floatingInput" placeholder="Area" step="1" name="titulacaoProfessor" value='<c:out value="${disciplina.titulacao}"></c:out>'>
+					<input type="text" class="form-control input-height" id="floatingInput" placeholder="Titulacao" step="1" name="titulacaoProfessor" value='<c:out value="${professor.titulacao}"></c:out>'>
 					<label for="floatingInput" class="font-text">Titulação</label>
 				</div>
 				<div class="d-flex">

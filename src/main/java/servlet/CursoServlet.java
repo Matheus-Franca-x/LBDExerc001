@@ -51,6 +51,7 @@ public class CursoServlet extends HttpServlet
 		String codigo = request.getParameter("codigoCurso");
 		String nome = request.getParameter("nomeCurso");
 		String area = request.getParameter("areaCurso");
+		List<Curso> cursos = new ArrayList<>();
 		
 		//saida
 		String saida = "";
@@ -64,6 +65,7 @@ public class CursoServlet extends HttpServlet
 			c.setArea(area);
 		}
 		try {
+			cursos = cControl.listarCursos();
 			if(cmd.contains("Cadastrar"))
 			{
 				cControl.cadastrarCurso(c);
@@ -93,6 +95,7 @@ public class CursoServlet extends HttpServlet
 			request.setAttribute("saida", saida);
 			request.setAttribute("erro", erro);
 			request.setAttribute("curso", c);
+			request.setAttribute("cursos", cursos);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("curso.jsp");
 			rd.forward(request, response);

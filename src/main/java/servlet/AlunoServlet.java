@@ -51,6 +51,7 @@ public class AlunoServlet extends HttpServlet
 		String ra = request.getParameter("raAluno");
 		String nome = request.getParameter("nomeAluno");
 		String idade = request.getParameter("idadeAluno");
+		List<Aluno> alunos = new ArrayList<>();
 		
 		//saida
 		String saida = "";
@@ -61,9 +62,16 @@ public class AlunoServlet extends HttpServlet
 		if(!cmd.contains("Cadastrar") || !cmd.contains("Alterar"))
 		{
 			a.setNome(nome);
-			a.setIdade(Integer.parseInt(idade));
+			if(!idade.strip().equals(""))
+			{
+				a.setIdade(Integer.parseInt(idade));
+			}
+			else {
+				a.setIdade(0);
+			}
 		}
 		try {
+			alunos = aControl.listarAlunos();
 			if(cmd.contains("Cadastrar"))
 			{
 				aControl.cadastrarAluno(a);
@@ -93,6 +101,7 @@ public class AlunoServlet extends HttpServlet
 			request.setAttribute("saida", saida);
 			request.setAttribute("erro", erro);
 			request.setAttribute("Aluno", a);
+			request.setAttribute("alunos", alunos);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("aluno.jsp");
 			rd.forward(request, response);

@@ -57,7 +57,7 @@
 					<label for="floatingInput" class="font-text">Nome</label>
 				</div>
 				<div class="form-floating mb-3 input-height">
-					<input type="number" class="form-control input-height" id="floatingInput" placeholder="Area" step="1" name="cargaHorariaDisciplina" value='<c:out value="${disciplina.cargaHoraria}"></c:out>'>
+					<input type="number" class="form-control input-height" id="floatingInput" placeholder="CargaHoraria" step="1" name="cargaHorariaDisciplina" value='<c:out value="${disciplina.cargaHoraria}"></c:out>'>
 					<label for="floatingInput" class="font-text">Carga Horária</label>
 				</div>
 				<div class="d-flex">
